@@ -49,7 +49,7 @@ const App = () => {
             <Route path="/customers" element={<Customers />} />
             
             {/* Apps */}
-            <Route path="/baklog" element={<Backlog />} />
+            <Route path="/backlog" element={<Backlog />} />
             <Route path="/editor" element={<Editor />} />
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/color-picker" element={<ColorPicker />} />
