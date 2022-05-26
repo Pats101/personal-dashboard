@@ -11,7 +11,7 @@ import { useStateContext } from '../contexts/ContextProvider';
 
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor } = useStateContext();
   const NavButton = ({ title, customFunc, icon, color, dotColor  }) => (
     <TooltipComponent content={title} position="BottomCenter">
       <button type='button' onClick={customFunc} style={{ color }} className="relative text-xl rounded-full p-3 hover:bg-light-gray"
@@ -45,7 +45,7 @@ const Navbar = () => {
         title="Menu" 
         customFunc={() =>
           setActiveMenu((prevActiveMenu) => !prevActiveMenu)} 
-          color="blue" 
+          color={currentColor}
           icon={<AiOutlineMenu />}
       />
       <div className='flex'>
@@ -53,7 +53,7 @@ const Navbar = () => {
           title="Cart" 
           customFunc={() =>
             handleClick('cart')} 
-            color="blue" 
+            color={currentColor} 
             icon={<FiShoppingCart />}
         />
         <NavButton 
@@ -61,7 +61,7 @@ const Navbar = () => {
           dotColor="#03C9D7"
           customFunc={() =>
             handleClick('chat')} 
-            color="blue" 
+            color={currentColor} 
             icon={<BsChatLeft />}
         />
         <NavButton 
@@ -69,7 +69,7 @@ const Navbar = () => {
           dotColor="#03C9D7"
           customFunc={() =>
             handleClick('notification')} 
-            color="blue" 
+            color={currentColor} 
             icon={<RiNotification3Line />}
         />
         <TooltipComponent 
